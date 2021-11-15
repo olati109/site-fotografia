@@ -293,6 +293,7 @@ footer {
   width: 100vw;
   max-width: 100%;
   padding: 20px 0;
+  justify-content: center;
   text-align: center;
 }
 
@@ -305,6 +306,6 @@ footer {
 .footer-bottom span {
   text-transform: uppercase;
   opacity: 0.4;
-  color: #564fcc;
+  color: #000;
   font-weight: 200px;
 }
