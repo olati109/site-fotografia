@@ -16,17 +16,26 @@ function andamento(event) {
   });
 }
 
-// const imgs = document.getElementById('img');
-// const img = document.querySelectorAll('#img img');
+let time = 2500,
+  currentImageIndex = 0,
+  images = document.querySelectorAll('#slider img');
+max = images.length;
 
-// let n = 0;
+function nextImage() {
+  images[currentImageIndex].classList.remove('selected');
 
-// function scroll() {
-//   n++;
-//   if (n > img.length - 1) {
-//     n = 0;
-//   }
-//   imgs.style.transform = `translateX(${-n * 500}px)`;
-// }
+  currentImageIndex++;
 
-// setInterval(scroll, 1000);
+  if (currentImageIndex >= max) currentImageIndex = 0;
+
+  images[currentImageIndex].classList.add('selected');
+}
+
+function start() {
+  setInterval(() => {
+    // troca de image
+    nextImage();
+  }, time);
+}
+
+window.addEventListener('load', start);
