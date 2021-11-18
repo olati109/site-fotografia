@@ -96,8 +96,6 @@
   opacity: 0.9;
 }
 
-/* MAIN */
-
 #P-container {
   margin: 50px;
   padding-top: 100px;
@@ -125,13 +123,25 @@
 }
 
 #cd-container {
+  box-shadow: 2px 2px 4px black;
+  overflow: hidden;
+  height: 500px;
+  width: 500px;
+}
+.carrossel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(0);
   width: 50%;
+  height: 40%;
 }
-#cd-container svg {
-  width: 80%;
-  height: 70%;
+
+img {
+  object-fit: cover;
+  height: 500px;
+  width: 500px;
 }
-/* section */
+
 .titulo {
   font-size: 60px;
   color: #564fcc;

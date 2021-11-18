@@ -15,3 +15,18 @@ function andamento(event) {
     behavior: 'smooth',
   });
 }
+
+// const imgs = document.getElementById('img');
+// const img = document.querySelectorAll('#img img');
+
+// let n = 0;
+
+// function scroll() {
+//   n++;
+//   if (n > img.length - 1) {
+//     n = 0;
+//   }
+//   imgs.style.transform = `translateX(${-n * 500}px)`;
+// }
+
+// setInterval(scroll, 1000);
