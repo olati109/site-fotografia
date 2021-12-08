@@ -16,26 +16,25 @@ function andamento(event) {
   });
 }
 
-let time = 2500,
-  currentImageIndex = 0,
-  images = document.querySelectorAll('#slider img');
-max = images.length;
+// let time = 2500,
+//   currentImageIndex = 0,
+//   images = document.querySelectorAll('#slider img');
+// max = images.length;
 
-function nextImage() {
-  images[currentImageIndex].classList.remove('selected');
+// function nextImage() {
+//   images[currentImageIndex].classList.remove('selected');
 
-  currentImageIndex++;
+//   currentImageIndex++;
 
-  if (currentImageIndex >= max) currentImageIndex = 0;
+//   if (currentImageIndex >= max) currentImageIndex = 0;
 
-  images[currentImageIndex].classList.add('selected');
-}
+//   images[currentImageIndex].classList.add('selected');
+// }
 
-function start() {
-  setInterval(() => {
-    // troca de image
-    nextImage();
-  }, time);
-}
+// function start() {
+//   setInterval(() => {
+//     nextImage();
+//   }, time);
+// }
 
-window.addEventListener('load', start);
+// window.addEventListener('load', start);
