@@ -30,7 +30,7 @@ body {
 #header #logo {
   position: relative;
   font-weight: 700;
-  color: #fff;
+  color: #000;
   text-decoration: none;
   font-size: 2em;
   text-transform: uppercase;
@@ -72,11 +72,11 @@ body {
 }
 
 #header nav a {
-  font-size: 14px;
+  font-size: 18px;
   text-decoration: none;
   padding: 10px;
   text-align: center;
-  color: #fff;
+  color: #000;
 }
 #header nav a:last-child {
   color: white;
@@ -98,6 +98,7 @@ body {
   background-image: url(./img/camera-gbdddf4733_1920.jpg);
   background-size: 100%;
 }
+
 #container {
   overflow: hidden;
   display: flex;
@@ -144,6 +145,35 @@ body {
   opacity: 0.9;
 }
 
+.arrow {
+  position: relative;
+  top: 650px;
+  left: 710px;
+  display: inline-block;
+  font-size: 10px;
+  line-height: 3em;
+  border: 7px solid #000;
+  border-left: transparent;
+  border-bottom: transparent;
+  width: 3em;
+  height: 3em;
+}
+
+.arrow:before {
+  content: '\00a0';
+}
+
+.arrow.bottom {
+  line-height: 2em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
 main {
   display: inline-block;
   margin-top: 700px;
@@ -173,6 +203,34 @@ main {
 
 #P-container .h3-main h1 {
   color: #000;
+}
+
+.foto {
+  position: absolute;
+  opacity: 0;
+  animation-name: animacao;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animacao {
+  25% {
+    opacity: 1;
+    transform: scale(1.1, 1.1);
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.foto:nth-child(1) {
+  animation-delay: -3s;
+}
+.foto:nth-child(2) {
+  animation-delay: 5s;
+}
+.foto:nth-child(3) {
+  animation-delay: 10s;
 }
 
 #slider {
@@ -207,14 +265,6 @@ main {
   width: 500px;
 }
 
-.titulo {
-  font-size: 60px;
-  color: #564fcc;
-  margin-top: 100px;
-  margin-bottom: -160px;
-  text-align: center;
-}
-
 .Preco-conteiner {
   width: 900px;
   display: flex;
@@ -235,12 +285,8 @@ main {
   margin: 5px;
   margin-left: 20px;
   float: left;
-  margin-top: 8%;
+  margin-top: 12%;
   text-align: center;
-}
-
-#precos {
-  margin-top: 200px;
 }
 
 .Preco {
