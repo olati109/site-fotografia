@@ -16,25 +16,42 @@ function andamento(event) {
   });
 }
 
-// let time = 2500,
-//   currentImageIndex = 0,
-//   images = document.querySelectorAll('#slider img');
-// max = images.length;
+const debounce = function (func, wait, immediate) {
+  let timeout;
+  return function (...args) {
+    const context = this;
+    const later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
 
-// function nextImage() {
-//   images[currentImageIndex].classList.remove('selected');
+const target = document.querySelectorAll('[data-anime]');
+const animationClass = 'animate';
 
-//   currentImageIndex++;
+function animeScroll() {
+  const windowTop = window.pageYOffset + (window.innerHeight * 3) / 4;
+  target.forEach(function (element) {
+    if (windowTop > element.offsetTop) {
+      element.classList.add(animationClass);
+    } else {
+      element.classList.remove(animationClass);
+    }
+  });
+}
 
-//   if (currentImageIndex >= max) currentImageIndex = 0;
+animeScroll();
 
-//   images[currentImageIndex].classList.add('selected');
-// }
-
-// function start() {
-//   setInterval(() => {
-//     nextImage();
-//   }, time);
-// }
-
-// window.addEventListener('load', start);
+if (target.length) {
+  window.addEventListener(
+    'scroll',
+    debounce(function () {
+      animeScroll();
+    }, 200),
+  );
+}
